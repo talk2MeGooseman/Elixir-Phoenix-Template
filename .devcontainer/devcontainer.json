@@ -1,9 +1,6 @@
 {
 	"name": "Phoenix",
-	"build": {
-		"dockerfile": "mcr.microsoft.com/vscode/devcontainers/universal:linux",
-	},
-
+	"image": "mcr.microsoft.com/vscode/devcontainers/universal:linux",
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"dbaeumer.vscode-eslint"
