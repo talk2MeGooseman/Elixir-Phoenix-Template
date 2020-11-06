@@ -1,25 +1,16 @@
-FROM elixir:1.9.0-alpine AS build
-
-# install build dependencies
-RUN apk add --no-cache build-base npm git python
-
-# prepare build dir
-WORKDIR /app
+ARG VARIANT=1.9
+FROM elixir:${VARIANT}}
 
 # install hex + rebar
-RUN mix local.hex --force && \
+RUN apt-get update && \
+    apt-get install -y postgresql-client && \
+    apt-get install -y inotify-tools && \
+    apt-get install -y nodejs && \
+    curl -L https://npmjs.org/install.sh | sh && \
+    mix local.hex --force && \
+    mix archive.install hex phx_new 1.5.3 --force && \
     mix local.rebar --force
 
-# # prepare release image
-# FROM alpine:3.9 AS app
-# RUN apk add --no-cache openssl ncurses-libs
-
-# WORKDIR /app
-
-# RUN chown nobody:nobody /app
-
-# USER nobody:nobody
-
-ENV HOME=/app
-
-#CMD ["bin/my_app", "start"]
+ENV APP_HOME /app
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
