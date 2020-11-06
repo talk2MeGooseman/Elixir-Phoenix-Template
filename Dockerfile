@@ -10,15 +10,15 @@ WORKDIR /app
 RUN mix local.hex --force && \
     mix local.rebar --force
 
-# prepare release image
-FROM alpine:3.9 AS app
-RUN apk add --no-cache openssl ncurses-libs
+# # prepare release image
+# FROM alpine:3.9 AS app
+# RUN apk add --no-cache openssl ncurses-libs
 
-WORKDIR /app
+# WORKDIR /app
 
-RUN chown nobody:nobody /app
+# RUN chown nobody:nobody /app
 
-USER nobody:nobody
+# USER nobody:nobody
 
 ENV HOME=/app
 
