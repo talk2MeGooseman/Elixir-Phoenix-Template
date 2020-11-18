@@ -1,3 +1,5 @@
+sudo rm /var/lib/dpkg/lock
+
 sudo apt-get update
 
 sudo apt-get install -y postgresql-client
