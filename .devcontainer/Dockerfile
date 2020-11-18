@@ -1,5 +1,9 @@
 FROM mcr.microsoft.com/vscode/devcontainers/universal:linux
 
+ENV APP_HOME /app
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
+
 RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb 
 RUN dpkg -i erlang-solutions_2.0_all.deb
 
@@ -12,7 +16,3 @@ RUN apt-get update && \
     mix local.rebar --force
 
 RUN rm -fr erlang-solutions*
-
-ENV APP_HOME /app
-RUN mkdir $APP_HOME
-WORKDIR $APP_HOME
