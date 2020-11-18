@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/vscode/devcontainers/universal:linux
 
-RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb
+RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb 
+RUN dpkg -i erlang-solutions_2.0_all.deb
 
 # install hex + rebar
 RUN apt-get update && \
