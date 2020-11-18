@@ -1,5 +1,7 @@
 FROM mcr.microsoft.com/vscode/devcontainers/universal:linux
 
+USER root
+
 ENV APP_HOME /app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
@@ -16,3 +18,5 @@ RUN apt-get update && \
     mix local.rebar --force
 
 RUN rm -fr erlang-solutions*
+
+USER codespace
