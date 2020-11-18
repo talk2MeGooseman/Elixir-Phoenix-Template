@@ -1,8 +1,8 @@
-apt-get update
+sudo apt-get update
 
-apt-get install -y postgresql-client
+sudo apt-get install -y postgresql-client
 
-apt-get install -y inotify-tools
+sudo apt-get install -y inotify-tools
 
 echo "Fetching Erlang & Elixir Deps"
 wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb
