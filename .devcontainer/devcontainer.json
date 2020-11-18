@@ -1,6 +1,6 @@
 {
 	"name": "Phoenix",
-	"image": "mcr.microsoft.com/vscode/devcontainers/universal:linux",
+	"dockerFile": "Dockerfile",
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"dbaeumer.vscode-eslint"
@@ -10,7 +10,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash scripts/install.sh",
+	// "postCreateCommand": "bash scripts/install.sh",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "node"
