@@ -8,8 +8,6 @@ This template was designed to work as a Visual Studio Code Dev Container and Git
 
 After selecting `Use this template`, create the repository for your project. Now you can either clone it locally are get started coding right away in codespaces.
 
-and connecting to this directory as a Dev Container, it should have everything you need to get a new Elixir/Phoenix project up and running.
-
 If you decide to clone your new project locally and want to get started coding. Just open it up in Visual Studio Code and `Reopen in Container`. This step will take a little bit while it downloads the Elixir Docker image and runs the installation scripts. But after it done you will be developing inside your new `Dev Conatiner`. 
 
 Now that your inside your `Dev Container` you have access to `iex`, `mix`, `npm`, and `node`. From here you can generate your Phoenix project doing the following command:
