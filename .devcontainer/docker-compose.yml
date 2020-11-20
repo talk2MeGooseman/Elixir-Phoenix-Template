@@ -11,7 +11,6 @@ services:
 
     volumes:
       - ..:/workspace:cached
-      - ~/.gitconfig:/root/.gitconfig
       - vscode-extension:/root/.vscode-server-insiders
 
     # Overrides default command so things don't shut down after the process ends.
