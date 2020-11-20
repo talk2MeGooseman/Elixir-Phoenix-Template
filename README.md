@@ -21,6 +21,7 @@ Running this command in the current working directory is necessary so it generat
 After running the command you should be done and you never had to install any dependencies locally :)
 
 **But what if I already have a project and just want a cool Dev Conatiner so I can code anywhere (like in Github Codespaces)?**
+
 Not a problem! All you have to do is just copy the contents of the `.devcontainer` folder and put it in your project. Inside there is all the goodness you need. 
 
 If you need a specific version of Elixir, crack open `docker-compose.yml` and change the `VARIANT` so when you `Dev Container` builds it goes and pulls down the version you need.
