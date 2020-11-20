@@ -22,6 +22,10 @@ After running the command you should be done and you never had to install any de
 
 Not a problem! All you have to do is just copy the contents of the `.devcontainer` folder and put it in your project. Inside there is all the goodness you need. 
 
+## Configuration
+
 If you need a specific version of Elixir, crack open `docker-compose.yml` and change the `VARIANT` so when you `Dev Container` builds it goes and pulls down the version you need.
+
+You can also change the version of Phoenix that is install be changing `PHX_VERSION`
 
 Happy coding!
