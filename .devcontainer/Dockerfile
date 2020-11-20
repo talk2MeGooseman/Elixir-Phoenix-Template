@@ -1,22 +1,18 @@
-FROM mcr.microsoft.com/vscode/devcontainers/universal:linux
+ARG VARIANT=latest
+FROM elixir:${VARIANT}
 
-USER root
+RUN apt-get update && \
+    apt-get install -y postgresql-client && \
+    apt-get install -y inotify-tools && \
+    apt-get install -y nodejs && \
+    apt-get install -y git && \
+    curl -L https://npmjs.org/install.sh | sh && \
+    mix local.hex --force && \
+    mix archive.install hex phx_new ${PHX_VERSION} --force && \
+    mix local.rebar --force
 
 ENV APP_HOME /app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
-RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb 
-RUN dpkg -i erlang-solutions_2.0_all.deb
-
-# install hex + rebar
-RUN apt-get update && \
-    apt-get install -y postgresql-client && \
-    apt-get install -y inotify-tools && \
-    mix local.hex --force && \
-    mix archive.install hex phx_new 1.5.3 --force && \
-    mix local.rebar --force
-
-RUN rm -fr erlang-solutions*
-
-USER codespace
+EXPOSE 4000
