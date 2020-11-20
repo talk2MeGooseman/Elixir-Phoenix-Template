@@ -1,4 +1,4 @@
-# Phoenix-Dev-Container-Template
+# Elixir-Phoenix-Dev-Container-Template
 
 Want to get start coding some Elixir? Want to generate a new Phoenix project but dont want to go through the hassel of installing all the dependencies? Well I got the solution for you!
 
